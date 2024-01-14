@@ -49,8 +49,7 @@ class _ChatFieldState extends State<ChatField> {
           padding: const EdgeInsets.all(8.0),
           child: Row(
             children: [
-              if (session.isBusy &&
-                  context.read<Model>().apiType != ApiType.ollama)
+              if (session.isBusy)
                 const IconButton(
                     onPressed: GenerationManager.stop,
                     iconSize: 50,

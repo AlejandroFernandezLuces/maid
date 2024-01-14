@@ -5,11 +5,7 @@ import 'package:maid/providers/session.dart';
 import 'package:maid/static/logger.dart';
 import 'package:maid/providers/model.dart';
 import 'package:maid/widgets/api_parameters/local_parameters.dart';
-import 'package:maid/widgets/api_parameters/mistralai_parameters.dart';
-import 'package:maid/widgets/api_parameters/ollama_parameters.dart';
-import 'package:maid/widgets/api_parameters/openai_parameters.dart';
 import 'package:maid/widgets/dialogs.dart';
-import 'package:maid/widgets/settings_widgets/api_dropdown.dart';
 import 'package:maid/widgets/settings_widgets/double_button_row.dart';
 import 'package:maid/widgets/settings_widgets/maid_text_field.dart';
 import 'package:provider/provider.dart';
@@ -225,15 +221,7 @@ class _ModelBodyState extends State<ModelBody> {
                     endIndent: 10,
                     color: Theme.of(context).colorScheme.primary,
                   ),
-                  const ApiDropdown(),
-                  if (model.apiType == ApiType.local)
-                    const LocalParameters()
-                  else if (model.apiType == ApiType.ollama)
-                    const OllamaParameters()
-                  else if (model.apiType == ApiType.openAI)
-                    const OpenAiParameters()
-                  else if (model.apiType == ApiType.mistralAI)
-                    const MistralAiParameters(),
+                  const LocalParameters()
                 ],
               ),
             ),
